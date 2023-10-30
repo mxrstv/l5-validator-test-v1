@@ -26,6 +26,28 @@ test('task2', () => {
   assert.equal(schema2.isValid(3), true);
 });
 
+test('task number range', () => {
+  const validator = new Validator();
+  const schema1 = validator.number().range(-100, 100);
+
+  assert.equal(schema1.isValid(''), false);
+  assert.equal(schema1.isValid(0), true);
+  assert.equal(schema1.isValid(-100), true);
+  assert.equal(schema1.isValid(100), true);
+  assert.equal(schema1.isValid(-1000), false);
+  assert.equal(schema1.isValid(1000), false);
+});
+
+test('task number prime', () => {
+  const validator = new Validator();
+  const schema1 = validator.number().prime();
+
+  assert.equal(schema1.isValid(0), false);
+  assert.equal(schema1.isValid(1), true);
+  assert.equal(schema1.isValid(3), true);
+  assert.equal(schema1.isValid(4), false);
+});
+
 test('task3', () => {
   const validator = new Validator();
   const schema = validator.array();

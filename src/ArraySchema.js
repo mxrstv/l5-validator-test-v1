@@ -7,8 +7,8 @@ export default class ArraySchema {
     return this.validators.every((validator) => validator(value) === true);
   }
 
-  length(len) {
-    const validator = (value) => value.length === len;
+  length(num) {
+    const validator = (value) => (value !== null ? value.length === num : false);
     return new ArraySchema([...this.validators, validator]);
   }
 }

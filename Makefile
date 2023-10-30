@@ -17,8 +17,8 @@ update-deps:
 	npx ncu -u
 
 test-steps:
-	node --test --test-name-pattern step1
-	node --test --test-name-pattern step2
-	node --test --test-name-pattern step3
-	node --test --test-name-pattern step4
-	node --test --test-name-pattern step5
+	node --test --test-name-pattern task1
+	node --test --test-name-pattern task2
+	node --test --test-name-pattern task3
+	node --test --test-name-pattern task4
+	node --test --test-name-pattern task5
